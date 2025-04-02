@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Resizer (Folder + Single Image) & ZIP Downloader</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            margin: 5px 0;
+            padding: 5px;
+        }
+
+        .image-list {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #3498db;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        #downloadZipBtn {
+            background-color: green;
+            border-radius: 10px;
+        }
+
+        #downloadZipBtn:hover {
+            background-color: limegreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Resize Images</h2>
+
+    <label for="widthInput">Enter Width (px):</label>
+    <input type="number" id="widthInput" placeholder="e.g., 1400" />
+
+    <label for="heightInput">Enter Height (px):</label>
+    <input type="number" id="heightInput" placeholder="e.g., 1689" />
+
+    <br><br>
+
+    <button onclick="document.getElementById('folderInput').click()">Upload Folder</button>
+    <button onclick="document.getElementById('fileInput').click()">Upload Single Image</button>
+
+    <input type="file" id="folderInput" webkitdirectory directory multiple accept="image/*" style="display:none;" />
+    <input type="file" id="fileInput" accept="image/*" style="display:none;" />
+
+    <div class="image-list" id="imageList"></div>
+    <button id="downloadZipBtn" style="display: none;">Download All as ZIP</button>
+
+    <script src="img.js"></script>
+
+</body>
+
+</html>
